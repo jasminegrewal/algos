@@ -1,2 +1,2 @@
 # practice-questions
-interview questions python
+algorithm or data structure questions
