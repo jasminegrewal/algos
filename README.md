@@ -1,2 +1,2 @@
-# practice-questions
+# algo's
 algorithm or data structure questions
