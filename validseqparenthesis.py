@@ -1,6 +1,6 @@
 """Time Complexity: O(n) as it goes to the for loop n number of times (in worst case) when it goes until end of string
 Space Complexity: O(n) for creating list which would be adding all chars in string to list in worst case"""
-def isvalid(string):
+def isValid(string):
     dict1={'(':')','[':']','{':'}'}
     stack=[]
     j=0
@@ -27,4 +27,4 @@ def isvalid(string):
         
 s='[()]{}{[()()]()}'
 s1='[()]}'
-print(isvalid(s))
+print(isValid(s))
