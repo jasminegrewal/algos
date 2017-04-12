@@ -1,3 +1,5 @@
+"""Time Complexity: O(n) as it goes to the for loop n number of times (in worst case) when it goes until end of string
+Space Complexity: O(n) for creating list which would be adding all chars in string to list in worst case"""
 def isvalid(string):
     dict1={'(':')','[':']','{':'}'}
     stack=[]
