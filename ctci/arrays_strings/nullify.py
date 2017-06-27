@@ -9,17 +9,20 @@ def nullify(m):
     row=[False]*len(m)
     col=[False]*len(m[0])
     
+    # store which column and rows have zeroes
     for i in range(0,len(m)):
         for j in range(0,len(m[0])):
             if (m[i][j]==0):
                 row[i]=True
                 col[j]=True
                 
+    # make the columns zero             
     for b in range(0,len(row)):
         if (row[b]==True):
             for j in range(0,len(m[0])):
                 m[b][j]=0
                 
+    # make the rows zero           
     for b in range(0,len(col)):
         if (col[b]==True):
             for j in range(0,len(m)):
