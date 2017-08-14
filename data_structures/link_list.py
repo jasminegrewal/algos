@@ -14,14 +14,18 @@ class LinkedList:
     def __init__(self,head=None):
         self.head=head
         
-    def add(self,data):
-        node=Node(data)
+    def prepend(self,data):
+        newHead=Node(data)
+        newHead.next=self.head
+        self.head=newHead
+        
+    def append(self,data):
         if(self.head==None):
-            self.head=node
-        else:
-            current=self.head
-            node.next=current
-            self.head=node
+            self.head=Node(data)
+        curr=self.head
+        while(curr.next!=None):
+            curr=curr.next
+        curr.next=Node(data)
             
     def find(self,data):
         current=self.head
@@ -30,36 +34,40 @@ class LinkedList:
                 return current.data
             current=current.next
     
-    def remove(self,data):
-        prev=self.head
-        if(prev.data==data):
-            self.head=prev.next
+    def removewithValue(self,data):
+        if(self.head==None):
             return
-        while (prev.next!=None):
-            current=prev.next
-            if(current.data==data):
-                prev.next=current.next
-                break
-            else:
-                prev=prev.next
-        print('not in list')
-    
+        #also covers remove first one case
+        if(self.head.data==data):
+            self.head=self.head.next
+        curr=self.head
+        while(curr.next!=None):
+            if(curr.next.data==data):
+                curr.next=curr.next.next
+                return
+            curr=curr.next
+            
     def __str__( self ) :
         link_list = ""
         node = self.head
         if node != None :	
             while node.next != None :
-                link_list += str(node.data)
+                link_list += " " + str(node.data)
                 node = node.next
-            link_list += str(node.data)
+            link_list += " " + str(node.data)
         return link_list
 
 n= Node(2)
 l=LinkedList(n)
-l.add(3)
-l.add(4)
-l.add(5)
+l.append(3)
+l.append(4)
+l.append(5)
+l.prepend(9)
+l.append(6)
+l.append(7)
 l.find(3)
 print(l)
-l.remove(2)
+l.removewithValue(2)
+print(l)
+l.removewithValue(7)
 print(l)
