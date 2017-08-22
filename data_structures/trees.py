@@ -89,8 +89,6 @@ class BST:
         # Node to be deleted has both left and right child
         elif(current.left is not None and current.right is not None):
             successor=self.getSuccessor(current)
-            print("successor")
-            print(successor.info)
             if(current==self.root):
                 self.root=successor
             elif(isLeftChild):
@@ -112,7 +110,6 @@ class BST:
             
         # successor is the smallest/target node at this point
         if (successor!=delnode.right):
-            print('here')
             succparent.left=successor.right #can only have right child
             successor.right=delnode.right # as it will replace the delnode
         return successor
