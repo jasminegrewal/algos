@@ -12,19 +12,24 @@ def ispermut(s,t):
     letters = [0 for i in range(0,128)]
     for char in s:
         letters[ord(char)]=letters[ord(char)]+1
-        print(letters)
     for char in t:
         j= ord(char)
+<<<<<<< f2ec9ce8ff264b29cbdb4c954eec2980e269d2c8
         print(letters[j]-1)
         # if a different char comes values is -1 or if a character count differs value gets negative
         # also we are checking length initially
         if ((letters[j]-1)<0):
+=======
+        #if a different char comes values is -1 or if a character count differs value gets negative
+        #note: we are checking length in first if
+        if ((letters[j]-1)<0):           
+>>>>>>> adding new files
             return False
     return True
         
         
         
-print (ispermut('abcc','abcc'))
+print (ispermut('abcc','abcd'))
     
     
     

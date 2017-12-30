@@ -4,17 +4,27 @@ Created on Fri Mar 24 17:13:21 2017
 
 @author: jasmine
 """
+<<<<<<< f2ec9ce8ff264b29cbdb4c954eec2980e269d2c8
 def replaceSp(instr, l):
     spacecount=0
     newl=0
     # removing space at the beginning and at the end of the string
+=======
+
+def replaceSp(instr, l):
+    spacecount=0
+    newl=0
+>>>>>>> adding new files
     instr=instr.strip()
     for char in instr:
         if (char==' '):
             spacecount +=1
     # newl is the length of the string to be returned
     newl=l+spacecount*2
+<<<<<<< f2ec9ce8ff264b29cbdb4c954eec2980e269d2c8
     # r is the character list of new string to be returned
+=======
+>>>>>>> adding new files
     r=[None]*newl
     
     for char in reversed(instr):
@@ -49,4 +59,8 @@ def replaceSpace(sentence):
             i-=1
     return (''.join(sentence[::]))
 
+<<<<<<< f2ec9ce8ff264b29cbdb4c954eec2980e269d2c8
 print(replaceSpace('Mr John Smith    '))
+=======
+print(replaceSpace('Mr John Smith    '))
+>>>>>>> adding new files

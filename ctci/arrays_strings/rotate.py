@@ -8,6 +8,8 @@ Created on Thu Mar 30 11:32:12 2017
 def issubstring(str1,str2):
     m=len(str1)
     n=len(str2)
+    if m>n:
+        return False
     for i in range(0,n-m):
         for j in range(i,i+m):
             flag=1
@@ -18,9 +20,10 @@ def issubstring(str1,str2):
             return True
     return False
 
-'''s1='erbottleatt'
+s1='erbottlewa'
 s2='waterbottlewaterbottle'
-print(issubstring(s1,s2))'''
+print(issubstring(s1,s2))
+
 '''is s1 rotated version of s2? yes? s1 will be substring of s2s2'''
 def isrotated(str1,str2):
     if (len(str1)!=len(str2)):
@@ -31,4 +34,4 @@ def isrotated(str1,str2):
         
 s1='manugrewal'
 s2='grewalmanu' 
-print(isrotated(s1,s2))
+#print(isrotated(s1,s2))
