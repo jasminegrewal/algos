@@ -4,31 +4,18 @@ Created on Fri Mar 24 17:13:21 2017
 
 @author: jasmine
 """
-
-def removspac(string):
-        string=string.strip()
-        res=[]
-        
-        for char in string:
-            if (char==' '):
-                res +='%20'
-            else:
-                res += char
-        
-        print(''.join(res[::]))
-        
-removspac('   Mr John Smith   ')
-
-def replacesp(instr, l):
+def replaceSp(instr, l):
     spacecount=0
     newl=0
+    # removing space at the beginning and at the end of the string
+    instr=instr.strip()
     for char in instr:
         if (char==' '):
             spacecount +=1
+    # newl is the length of the string to be returned
     newl=l+spacecount*2
-    print(newl)
+    # r is the character list of new string to be returned
     r=[None]*newl
-    print(r)
     
     for char in reversed(instr):
         if (char == ' '):
@@ -36,16 +23,30 @@ def replacesp(instr, l):
             r[newl-2]='2'
             r[newl-3]='%'
             newl=newl-3
-            print(r)
         else:
             r[newl-1]=char
             newl=newl-1
-            print(r)
     print(''.join(r[::]))
     
-replacesp('   Mr John Smith   ',13)
-    
-        
-    
-    
-    
+replaceSp('   Mr John Smith   ',13)
+
+'''If l is not given, only string is given with enough spaces at back to fill with %20'''
+
+def replaceSpace(sentence):
+    # reading the string without the extra spaces
+    newSentence=sentence.strip()
+    # making a list of original string to make changes else item assignment error in string
+    sentence=[ch for ch in sentence]
+    i=len(sentence)
+    for char in reversed(newSentence):
+        if(char==' '):
+            sentence[i-1]='0'
+            sentence[i-2]='2'
+            sentence[i-3]='%'
+            i-=3
+        else:
+            sentence[i-1]=char
+            i-=1
+    return (''.join(sentence[::]))
+
+print(replaceSpace('Mr John Smith    '))
