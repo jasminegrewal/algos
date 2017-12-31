@@ -4,16 +4,10 @@ Created on Fri Mar 24 17:13:21 2017
 
 @author: jasmine
 """
-<<<<<<< f2ec9ce8ff264b29cbdb4c954eec2980e269d2c8
 def replaceSp(instr, l):
     spacecount=0
     newl=0
     # removing space at the beginning and at the end of the string
-=======
-
-def replaceSp(instr, l):
-    spacecount=0
-    newl=0
     instr=instr.strip()
     for char in instr:
         if (char==' '):
