@@ -53,3 +53,9 @@ eight.next=nine
 nine.next=three
 
 print(firstNodeInCycle(head))
+
+''' link list:: 1->2->3->4->5->6->7->8->9
+                      ^                 |
+                      |_________________|
+ '''
+                      
