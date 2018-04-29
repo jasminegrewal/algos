@@ -22,6 +22,7 @@ class LinkedList:
     def append(self,data):
         if(self.head==None):
             self.head=Node(data)
+            return
         curr=self.head
         while(curr.next!=None):
             curr=curr.next
@@ -40,6 +41,7 @@ class LinkedList:
         #also covers remove first one case
         if(self.head.data==data):
             self.head=self.head.next
+            return
         curr=self.head
         while(curr.next!=None):
             if(curr.next.data==data):
